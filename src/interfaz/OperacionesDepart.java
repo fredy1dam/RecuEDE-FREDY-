@@ -121,13 +121,6 @@ public class OperacionesDepart extends JDialog {
 				String nom, pob;
 				ODB odb=ODBFactory.open(BBDD);
 				
-				insertarDep(odb);
-			}
-
-			private void insertarDep(ODB odb) {
-				int num;
-				String nom;
-				String pob;
 				try{
 					num=Integer.parseInt(txNumDepart.getText());
 					comprobarNumDepart(odb, num);
@@ -163,11 +156,6 @@ public class OperacionesDepart extends JDialog {
 				int num=0;
 				ODB odb=ODBFactory.open(BBDD);
 				
-				borrarDep(odb);
-			}
-
-			private void borrarDep(ODB odb) {
-				int num;
 				try{
 					num=Integer.parseInt(txNumDepart.getText());
 					IQuery query=new CriteriaQuery(Departamento.class, Where.equal("dept_no", num));
@@ -201,11 +189,6 @@ public class OperacionesDepart extends JDialog {
 				int num;
 				ODB odb=ODBFactory.open(BBDD);
 				
-				consultarDep(odb);
-			}
-
-			private void consultarDep(ODB odb) {
-				int num;
 				try{
 					num=Integer.parseInt(txNumDepart.getText());
 					IQuery query=new CriteriaQuery(Departamento.class, Where.equal("dept_no", num));
@@ -233,11 +216,6 @@ public class OperacionesDepart extends JDialog {
 				int num;
 				ODB odb=ODBFactory.open(BBDD);
 				
-				modificarDep(odb);
-			}
-
-			private void modificarDep(ODB odb) {
-				int num;
 				try{
 					num=Integer.parseInt(txNumDepart.getText());
 					IQuery query=new CriteriaQuery(Departamento.class, Where.equal("dept_no", num));
